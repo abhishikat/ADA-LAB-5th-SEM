@@ -7,27 +7,25 @@
 //Now pop elements one by one and keep track of the previously popped node. 
 //Point the next pointer of prev node to top element of stack.
 //Repeat this process, until NULL is reached
+
+
 #include <bits/stdc++.h> 
 using namespace std; 
   
-
+/* Link list node */
 struct Node { 
     int data; 
     struct Node* next; 
 }; 
   
-
 struct Node* Reverse(struct Node* head, int k) 
 { 
-
     stack<Node*> mystack; 
     struct Node* current = head; 
     struct Node* prev = NULL; 
   
     while (current != NULL) { 
   
-
-
         int count = 0; 
         while (current != NULL && count < k) { 
             mystack.push(current); 
@@ -35,10 +33,8 @@ struct Node* Reverse(struct Node* head, int k)
             count++; 
         } 
   
-
         while (mystack.size() > 0) { 
   
-
             if (prev == NULL) { 
                 prev = mystack.top(); 
                 head = prev; 
@@ -51,31 +47,24 @@ struct Node* Reverse(struct Node* head, int k)
         } 
     } 
   
-
     prev->next = NULL; 
   
     return head; 
 } 
   
 
-
 void push(struct Node** head_ref, int new_data) 
 { 
-
     struct Node* new_node =  
           (struct Node*)malloc(sizeof(struct Node)); 
   
-
     new_node->data = new_data; 
   
-
     new_node->next = (*head_ref); 
   
-
     (*head_ref) = new_node; 
 } 
   
-
 void printList(struct Node* node) 
 { 
     while (node != NULL) { 
@@ -84,29 +73,31 @@ void printList(struct Node* node)
     } 
 } 
   
-
 int main(void) 
 { 
-
     struct Node* head = NULL; 
+  int item,n;
+
+	printf("Enter the number of item to be inserted\n");
+scanf("%d",&n);
+for(int i=0;i<n;i++)
+{
+scanf("%d",&item);
+push(&head,item);
+}
+int k;
+scanf("%d",&k);
 
 
 
-    
-   
-    push(&head, 8); 
-    push(&head, 7); 
-    push(&head, 6); 
-    push(&head, 5); 
-    push(&head, 4); 
-    push(&head, 2); 
-    push(&head, 2); 
-    push(&head, 1); 
+
+
+
 
   
     printf("\nGiven linked list \n"); 
     printList(head); 
-    head = Reverse(head, 4); 
+    head = Reverse(head, k); 
   
     printf("\nReversed Linked list \n"); 
     printList(head); 
