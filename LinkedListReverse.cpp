@@ -1,6 +1,12 @@
 
-// C++ program to reverse a linked list in groups 
-// of given size 
+//Given a linked list of size N, write a program to reverse every k nodes (where k is an input to the function) in the linked list.
+//Logic Applied
+//Take the linked list and its position from where to reverse and afterwards
+//In this post, we have used a stack which will store the nodes of the given linked list. 
+//Firstly, push the k elements of the linked list in the stack. 
+//Now pop elements one by one and keep track of the previously popped node. 
+//Point the next pointer of prev node to top element of stack.
+//Repeat this process, until NULL is reached
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -86,7 +92,7 @@ int main(void)
 
 
 
-    /*Created Linked list is 1->2->3->4->5->6->7->8->9 */
+    
    
     push(&head, 8); 
     push(&head, 7); 
