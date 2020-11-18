@@ -27,12 +27,9 @@ class RBtree
       void insertfix(node *);
       void leftrotate(node *);
       void rightrotate(node *);
-      void del();
-      node* successor(node *);
-      void delfix(node *);
       void disp();
       void display( node *);
-      void search();
+      
 };
 void RBtree::insert()
 {
@@ -193,24 +190,6 @@ void RBtree::rightrotate(node *p)
          y->right=p;
          p->parent=y;
      }
-}
-
-node* RBtree::successor(node *p)
-{
-      node *y=NULL;
-     if(p->left!=NULL)
-     {
-         y=p->left;
-         while(y->right!=NULL)
-              y=y->right;
-     }
-     else
-     {
-         y=p->right;
-         while(y->left!=NULL)
-              y=y->left;
-     }
-     return y;
 }
 
 void RBtree::disp()
