@@ -18,3 +18,14 @@ Write a program to perform insertion and deletion operations on an 2-3 tree
 Write a program to implement insertion operation on a B-tree.
 ## Program 7:
 Write a program to implement insertion operation on a red black tree. During insertion, appropriately show how recolouring or rotation operation is used
+## Program 8:
+Write a program to to implement functions of Dictionary using Hashing.
+## Program 9:
+Write a program to implement the following functions on a Binomial heap:
+(1) insert(H, k): Inserts a key ‘k’ to Binomial Heap ‘H’. This operation first creates a Binomial Heap with single key ‘k’, then calls union on H and the new Binomial heap.
+(2) getMin(H): A simple way to getMin() is to traverse the list of root of Binomial Trees and return the minimum key. 
+(3) extractMin(H): This operation also uses union(). We first call getMin() to find the minimum key Binomial Tree, then we remove the node and create a new Binomial Heap by connecting all subtrees of the removed minimum node. Finally we call union() on H and the newly created Binomial Heap.
+## Program 10:
+Write a program to implement the following functions on a Binomial heap:
+1.	delete(H): Like Binary Heap, delete operation first reduces the key to minus infinite, then calls extractMin().
+2.	decreaseKey(H): decreaseKey() is also similar to Binary Heap. We compare the decreases key with it parent and if parent’s key is more, we swap keys and recur for parent. We stop when we either reach a node whose parent has smaller key or we hit the root node.
